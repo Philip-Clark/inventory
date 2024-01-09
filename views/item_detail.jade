@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .item-detail
+    h1=item.name
+    img(src=item.image, alt=``)
+    p=item.description
+    p=`$${item.price}`
+    ul#categories
+      each category in item.categories
+        a(href=category.url)
+          p=`${category.name}`
+

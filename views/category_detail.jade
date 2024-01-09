@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .category-detail
+    h1=category.name
+    p=category.description
+    each item in itemsInCategory
+      a(href=item.url)
+        div#itemListItem
+          div
+            h3=item.name
+
+
