@@ -7,9 +7,10 @@ block content
     i(class="fas fa-arrow-left") 
   .item-detail
     h1=item.name
-    img(src=item.image, alt=``)
     p=item.description
     p=`$${item.price}`
+    p=`${item.stock} in stock`
+
     hr
     p Categories:
     ul#categories

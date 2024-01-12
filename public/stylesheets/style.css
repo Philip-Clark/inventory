@@ -1,37 +1,54 @@
 :root {
   --main-bg-color: #000000;
-  --secondary-bg-color: #3d3d3d;
-  --main-text-color: #ebebeb;
-  --accent-text-color: #e2e2e2;
+  --secondary-bg-color: #1b1b1b;
+  --main-text-color: #d7d7d7;
+  --accent-text-color: #00ff95;
 }
 
 body {
   padding: 50px;
 
   font: 20px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-weight: 900;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   display: flex;
+  gap: 50px;
+  flex-direction: row-reverse;
 }
 
 a {
   color: var(--accent-text-color);
-  text-decoration: none;
+}
+
+h1 {
+  color: var(--accent-text-color);
+}
+
+a > * {
+  color: var(--main-text-color);
 }
 
 #itemList {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-#itemListItem img {
-  width: 200px;
-}
-
-#itemListItem {
+#itemList > #itemListItem {
   gap: 10px;
   display: flex;
+  aspect-ratio: 3/4;
+  width: 300px;
+  overflow: hidden;
+  padding: 10px;
+  border: solid var(--accent-text-color) 2px;
+  border-radius: 10px;
+  background: var(--secondary-bg-color);
+}
+
+a#itemListItem {
+  text-decoration: none;
 }
 
 form {
@@ -46,18 +63,23 @@ form button {
   color: var(--main-text-color);
   padding: 10px;
   background-color: var(--secondary-bg-color);
+  border-radius: 9999px;
+  border: solid var(--accent-text-color) 2px;
 }
 
 #nav {
   position: sticky;
-  top: 50px;
-  margin-top: 50px;
+  top: 100px;
+  margin-top: 100px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: left;
   gap: 10px;
-  flex-shrink: 1;
   width: 20ch;
   height: min-content;
+}
+
+#content {
+  flex: 1;
 }

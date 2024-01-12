@@ -19,7 +19,10 @@ const ItemSchema = new Schema({
     type: Number,
     required: true,
   },
-  stock: Number,
+  stock: {
+    type: Number,
+    required: true,
+  },
   image: String,
 });
 

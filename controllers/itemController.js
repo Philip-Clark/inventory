@@ -66,6 +66,7 @@ exports.item_create_post = [
   body('name', 'item name required').trim().isLength({ min: 1 }).escape(),
   body('description', 'item description required').trim().isLength({ min: 1 }).escape(),
   body('price', 'item price required').isNumeric().escape(),
+  body('stock', 'item stock required').isNumeric().escape(),
   body('categories.*').escape(),
   body('password', 'Incorrect password').custom((value) => value === process.env.ADMIN_PASSWORD),
 
@@ -75,6 +76,7 @@ exports.item_create_post = [
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
+      stock: req.body.stock,
       categories: req.body.category,
       image: 'https://placehold.co/800x600/343434/fff/png',
     });
@@ -172,6 +174,7 @@ exports.item_update_post = [
   body('name', 'item name required').trim().isLength({ min: 1 }).escape(),
   body('description', 'item description required').trim().isLength({ min: 1 }).escape(),
   body('price', 'item price required').isNumeric().escape(),
+  body('stock', 'item stock required').isNumeric().escape(),
   body('categories.*').escape(),
   body('password', 'Incorrect password').custom((value) => value === process.env.ADMIN_PASSWORD),
 
@@ -182,6 +185,7 @@ exports.item_update_post = [
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
+      stock: req.body.stock,
       categories: req.body.category,
       _id: req.params.id,
     });

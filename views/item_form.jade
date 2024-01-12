@@ -10,6 +10,8 @@ block content
     
     label(for="price") Price:
     input(type="number", name="price", step="0.01", id="price", value=item && item.price, required)
+    label(for="stock") Stock:
+    input(type="number", name="stock", id="stock", value=item && item.stock, required)
 
     label(for="Categories") Categories:
       each category in categories
