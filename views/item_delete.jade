@@ -8,6 +8,6 @@ block content
     button(type="submit") Delete Item
   form(method="GET" action=`/catalog/item/${item._id}`)
     button(type="submit") Cancel
-
-  each error in errors
-    p=error.msg
+  if errors
+    each error in errors
+      p=error.msg
