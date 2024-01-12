@@ -6,8 +6,8 @@ block content
     each item in items
       a(href=item.url)
         div#itemListItem
+          img(src=item.image, alt=``) 
           div
-            img(src=item.image, alt=``) 
             h3=item.name
             p=item.description
             p=`$${item.price}`

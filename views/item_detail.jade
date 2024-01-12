@@ -1,13 +1,23 @@
+
+
 extends layout
 
 block content
+  a(href="/catalog")
+    i(class="fas fa-arrow-left") 
   .item-detail
     h1=item.name
     img(src=item.image, alt=``)
     p=item.description
     p=`$${item.price}`
+    hr
+    p Categories:
     ul#categories
       each category in item.categories
         a(href=category.url)
           p=`${category.name}`
-
+    hr
+    p 
+      a(href=item.url + '/update') Edit
+    p
+      a(href=item.url+'/delete') Delete

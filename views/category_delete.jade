@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+  h1=title
+  if items.length
+    p Deleting this category will affect the following items:
+    ul
+      each item in items
+        li
+          a(href=item.url)= item.name
+  
+  p Are you sure you want to delete this category?
+  form(method="POST")
+    input(type="password" name="password" id="password" placeholder="Password" required)
+    button(type="submit") Delete Category
+  form(action="/")
+    button(type="submit") Cancel 
+
+  if errors
+    each error in errors
+      p=error.msg

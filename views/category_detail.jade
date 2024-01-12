@@ -4,10 +4,17 @@ block content
   .category-detail
     h1=category.name
     p=category.description
+
+    hr
+    h2 Items in this category:
     each item in itemsInCategory
       a(href=item.url)
         div#itemListItem
           div
-            h3=item.name
-
+            p=item.name
+    hr
+    p 
+      a(href=category.url + '/update') Edit
+    p
+      a(href=category.url+'/delete') Delete
 

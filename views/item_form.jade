@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  form(method="POST")
+    label(for="name") Name:
+    input(type="text", name="name", id="name" placeholder="Name of item", value= item && item.name, required)
+    
+    label(for="description") Description:
+    textarea(name="description", id="description" placeholder="Description of item", required)=item && item.description
+    
+    label(for="price") Price:
+    input(type="number", name="price", step="0.01", id="price", value=item && item.price, required)
+
+    label(for="Categories") Categories:
+      each category in categories
+        <br>
+        input(type="checkbox", name="category", id=category.id, value=category._id, checked=category.checked)
+        label(for=category._id)=category.name 
+    input(type="password", name="password", id="password", placeholder="Password", required)
+    button(type="submit")=actionText
+  form(action="/" method="GET") 
+    button(type="cancel") Cancel
+
+  if errors 
+    each error in errors
+      p=error.msg

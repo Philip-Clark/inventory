@@ -3,5 +3,14 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css")
   body
-    block content
+    #nav
+      a(href="/") Home
+      a(href="/catalog") Catalog
+      a(href="/catalog/item/create") Create Item
+      a(href="/catalog/categories") Categories
+      a(href="/catalog/category/create") Create Category    
+    #content 
+      block content
+

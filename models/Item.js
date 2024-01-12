@@ -6,7 +6,6 @@ const ItemSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
   description: String,
   categories: [
